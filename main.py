@@ -15,6 +15,7 @@ have all the information from soccer teams, to soccer leagues from Honduras.
 # every honduran team. Then we will show the results in the display.
 
 # === MENUS ===
+# Main Menu: User selects one of the following options.
 # Menu 1: Soccer Leagues -> Matches, Teams. Finder.
 # Menu 2: Matches with Dates & Stadium Names Menu
 # Menu 3: Trivia Minigame
