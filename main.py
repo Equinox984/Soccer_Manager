@@ -1,8 +1,12 @@
-"""Soccer Manager Engine"""
-"""
+"""Soccer Manager Engine
+
 The purpose of this project is to create a tool that allows soccer enthusiasts to
 have all the information from soccer teams, to soccer leagues from Honduras.
 """
+
+from module import soccer_leagues
+
+############################################################################################
 # Create a function that shows the Soccer Manager Menu
 # - Submenu 1: If the user selects 1, we will have a Menu with all the Soccer Leagues
 # and their teams.
@@ -13,17 +17,44 @@ have all the information from soccer teams, to soccer leagues from Honduras.
 # - Submenu 3: If the user selects 3, we will have a Trivia Minigame, where you need
 # to select the correct option from fun facts of
 # every honduran team. Then we will show the results in the display.
+############################################################################################
+
 
 # === MENUS ===
 # Menu 1: Soccer Leagues -> Matches, Teams. Finder.
+def soccer_league():
+    # Dictionary with Teams
+    league_choice = int(
+        input("""
+--- Soccer Leagues Menu ---
+
+[1] Honduran Leagues
+[2] Honduran Teams
+[3] Finder
+
+-> """).strip()
+    )
+    if league_choice == 1:
+        print("\n--- Honduran Leagues ---")
+    elif league_choice == 2:
+        print("\n--- Honduran Teams ---")
+    elif league_choice == 3:
+        print("\n--- Finder ---")
+    else:
+        print("\nERROR: Invalid choice. Please select a valid option (1,2,3).\n")
+    #
+
+
 # Menu 2: Matches with Dates & Stadium Names Menu
 # Menu 3: Trivia Minigame
+
 
 # Main Menu: User selects one of the following options.
 def main_menu():
     while True:
         try:
-            main_choice = int(input("""
+            main_choice = int(
+                input("""
 ===== Welcome to the Soccer Manager =====
 
 [1] Soccer Leagues
@@ -31,13 +62,14 @@ def main_menu():
 [3] Trivia Minigame
 [4] Exit
 
--> """).strip())
+-> """).strip()
+            )
         except ValueError:
             print("\nERROR: Invalid input. Please enter a valid option.\n")
             continue
-        
+
         if main_choice == 1:
-            print("\n--- Soccer Leagues Menu ---")
+            soccer_league()
         elif main_choice == 2:
             print("\n--- Matches Menu ---")
         elif main_choice == 3:
@@ -47,5 +79,6 @@ def main_menu():
         else:
             print("\nERROR: Invalid option. Select 1, 2, 3, or 4!!!\n")
             continue
+
 
 main_menu()
