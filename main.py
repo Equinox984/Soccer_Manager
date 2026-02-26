@@ -15,7 +15,37 @@ have all the information from soccer teams, to soccer leagues from Honduras.
 # every honduran team. Then we will show the results in the display.
 
 # === MENUS ===
-# Main Menu: User selects one of the following options.
 # Menu 1: Soccer Leagues -> Matches, Teams. Finder.
 # Menu 2: Matches with Dates & Stadium Names Menu
 # Menu 3: Trivia Minigame
+
+# Main Menu: User selects one of the following options.
+def main_menu():
+    while True:
+        try:
+            main_choice = int(input("""
+===== Welcome to the Soccer Manager =====
+
+[1] Soccer Leagues
+[2] Matches
+[3] Trivia Minigame
+[4] Exit
+
+-> """).strip())
+        except ValueError:
+            print("\nERROR: Invalid input. Please enter a valid option.\n")
+            continue
+        
+        if main_choice == 1:
+            print("\n--- Soccer Leagues Menu ---")
+        elif main_choice == 2:
+            print("\n--- Matches Menu ---")
+        elif main_choice == 3:
+            print("\n--- Trivia Minigame ---")
+        elif main_choice == 4:
+            break
+        else:
+            print("\nERROR: Invalid option. Select 1, 2, 3, or 4!!!\n")
+            continue
+
+main_menu()
