@@ -4,7 +4,7 @@ The purpose of this project is to create a tool that allows soccer enthusiasts t
 have all the information from soccer teams, to soccer leagues from Honduras.
 """
 
-from module import soccer_leagues
+from module import soccer_teams
 
 ############################################################################################
 # Create a function that shows the Soccer Manager Menu
@@ -23,26 +23,67 @@ from module import soccer_leagues
 # === MENUS ===
 # Menu 1: Soccer Leagues -> Matches, Teams. Finder.
 def soccer_league():
-    # Dictionary with Teams
-    league_choice = int(
-        input("""
+    while True:
+        try:
+            league_choice = int(
+                input("""
 --- Soccer Leagues Menu ---
 
 [1] Honduran Leagues
 [2] Honduran Teams
 [3] Finder
+[4] Exit
 
 -> """).strip()
-    )
-    if league_choice == 1:
-        print("\n--- Honduran Leagues ---")
-    elif league_choice == 2:
-        print("\n--- Honduran Teams ---")
-    elif league_choice == 3:
-        print("\n--- Finder ---")
-    else:
-        print("\nERROR: Invalid choice. Please select a valid option (1,2,3).\n")
-    #
+            )
+            if league_choice == 1:
+                honduran_leagues()
+            elif league_choice == 2:
+                print("\n--- Honduran Teams ---")
+            elif league_choice == 3:
+                print("\n--- Finder ---")
+            elif league_choice == 4:
+                print("Exiting...")
+                break
+            else:
+                print(
+                    "\nERROR: Invalid choice. Please select a valid option (1,2,3).\n"
+                )
+                continue
+        except ValueError:
+            print("\nERROR: Invalid input. Please enter a number.\n")
+            continue
+
+
+# Subfunction 1 (Belongs to Menu 1): Honduran Leagues
+def honduran_leagues():
+    while True:
+        try:
+            choice_leagues = int(
+                input("""
+--- Honduran Leagues ---
+[1] Honduran National Professional Football League (First Division)
+[2] Honduran Second Division (Ascenso League)
+[3] Exit
+
+-> """)
+            )
+            if choice_leagues == 1:
+                print("\nShow teams from first league.")
+            elif choice_leagues == 2:
+                print("\nShow teams from second league.")
+            elif choice_leagues == 3:
+                break
+            else:
+                print(
+                    "\nERROR: Invalid choice. Please select a valid option (1,2,3).\n"
+                )
+        except ValueError:
+            print("\nERROR: Invalid input. Please enter a number.\n")
+
+
+# Subfunction 2 (Belongs to Menu 1): Honduran Teams
+# Subfunction 3 (Belongs to Menu 1): Finder
 
 
 # Menu 2: Matches with Dates & Stadium Names Menu
