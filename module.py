@@ -1,6 +1,5 @@
 """Module for Soccer Manager Engine"""
 
-
 first_division = {
     "Honduran National Professional Football League (First Division)": [
         "Real España",
@@ -70,3 +69,17 @@ ascenso_league = {
     ],
 }
 
+
+finder_first_division = {
+    "Real España": "wiki url",
+    "Motagua": "wiki url",
+    "Olimpia": "wiki url",
+    "Victoria": "wiki url",
+    "Olancho F.C.": "wiki url",
+    "Maratón": "wiki url",
+    "Platense": "wiki url",
+    "Club Deportivo Choloma": "wiki url",
+    "Juticalpa": "wiki url",
+    "Lobos UPNFM": "wiki url",
+    "Club Deportivo Génesis Policía Nacional": "wiki url",
+}
