@@ -1,6 +1,7 @@
 """Module for Soccer Manager Engine"""
 
-soccer_teams = {
+
+first_division = {
     "Honduran National Professional Football League (First Division)": [
         "Real España",
         "Motagua",
@@ -13,9 +14,11 @@ soccer_teams = {
         "Juticalpa",
         "Lobos UPNFM",
         "Club Deportivo Génesis Policía Nacional",
-    ],
-    "Honduran Second Division (Ascenso League)": [
-        # Group A
+    ]
+}
+
+ascenso_league = {
+    "Group A": [
         "Boca Juniors",
         "Vida",
         "Juventus",
@@ -23,28 +26,32 @@ soccer_teams = {
         "Sampdoria",
         "Real Sociedad",
         "Roma F.C.",
-        # Group B
+    ],
+    "Group B": [
         "Honduras Progreso",
         "Atlético Junior",
         "Tela F.C.",
         "F.C. Santa Rosa",
         "Oro Verde F.C.",
         "Estrella F.C.",
-        # Group C
+    ],
+    "Group C": [
         "CD Choloma",
         "Parrillas One",
         "Leones HT6",
         "C.D. Brasilia",
         "Pumas F.C.",
         "Lone F.C.",
-        # Group D
+    ],
+    "Group D": [
         "San Juan Huracán",
         "Olimpia Occidental",
         "Santo Domingo Savio",
         "Cuervos",
         "San Juan Gualjoco",
         "Real Juventud",
-        # Group E
+    ],
+    "Group E": [
         "Atlético Independiente",
         "Real Tegus",
         "AFFI Academia",
@@ -52,7 +59,8 @@ soccer_teams = {
         "FAS",
         "Inter",
         "Policía Nacional",
-        # Group F
+    ],
+    "Group F": [
         "Hondupino",
         "Estrella Roja",
         "Gimnástico",
@@ -61,3 +69,4 @@ soccer_teams = {
         "Meluca F.C.",
     ],
 }
+
