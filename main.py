@@ -4,7 +4,7 @@ The purpose of this project is to create a tool that allows soccer enthusiasts t
 have all the information from soccer teams, to soccer leagues from Honduras.
 """
 
-from module import ascenso_league, first_division
+from module import ascenso_league, finder_first_division, first_division
 
 ############################################################################################
 # Create a function that shows the Soccer Manager Menu
