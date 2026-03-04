@@ -4,7 +4,7 @@ The purpose of this project is to create a tool that allows soccer enthusiasts t
 have all the information from soccer teams, to soccer leagues from Honduras.
 """
 
-from module import soccer_teams
+from module import ascenso_league, first_division
 
 ############################################################################################
 # Create a function that shows the Soccer Manager Menu
@@ -15,35 +15,32 @@ from module import soccer_teams
 # - Submenu 2: If the user selects 2, we will show with this function every match
 # available with their dates and stadiums.
 # - Submenu 3: If the user selects 3, we will have a Trivia Minigame, where you need
-# to select the correct option from fun facts of
-# every honduran team. Then we will show the results in the display.
+# to select the correct option from fun facts of every honduran team.
+# Then we will show the results in the display.
 ############################################################################################
 
 
 # === MENUS ===
-# Menu 1: Soccer Leagues -> Matches, Teams. Finder.
-def soccer_league():
+# SOCCER TEAMS: MENU 1
+def soccer_teams():
     while True:
         try:
             league_choice = int(
                 input("""
 --- Soccer Leagues Menu ---
 
-[1] Honduran Leagues
-[2] Honduran Teams
-[3] Finder
-[4] Exit
+[1] Honduran Leagues & Teams
+[2] Finder
+[3] Exit
 
 -> """).strip()
             )
             if league_choice == 1:
                 honduran_leagues()
             elif league_choice == 2:
-                print("\n--- Honduran Teams ---")
-            elif league_choice == 3:
                 print("\n--- Finder ---")
-            elif league_choice == 4:
-                print("Exiting...")
+            elif league_choice == 3:
+                print("\nExiting...")
                 break
             else:
                 print(
@@ -68,10 +65,26 @@ def honduran_leagues():
 
 -> """)
             )
+
             if choice_leagues == 1:
-                print("\nShow teams from first league.")
+                print("\n" + "=" * 50)
+                print("  Liga Nacional de Honduras (Primera División)")
+                print("=" * 50)
+                for league, teams in first_division.items():
+                    for i, team in enumerate(teams, 1):
+                        print(f"  {i}. {team}")
+                print("=" * 50)
+
             elif choice_leagues == 2:
-                print("\nShow teams from second league.")
+                print("\n" + "=" * 50)
+                print("  Segunda División (Liga de Ascenso)")
+                print("=" * 50)
+                for group, teams in ascenso_league.items():
+                    print(f"\n   {group}")
+                    print("  " + "-" * 30)
+                    for i, team in enumerate(teams, 1):
+                        print(f"    {i}. {team}")
+                print("\n" + "=" * 50)
             elif choice_leagues == 3:
                 break
             else:
@@ -82,16 +95,15 @@ def honduran_leagues():
             print("\nERROR: Invalid input. Please enter a number.\n")
 
 
-# Subfunction 2 (Belongs to Menu 1): Honduran Teams
-# Subfunction 3 (Belongs to Menu 1): Finder
+# Subfunction 2 (Belongs to Menu 1): Finder
 
 
-# Menu 2: Matches with Dates & Stadium Names Menu
-# Menu 3: Trivia Minigame
+# MATCHES WITH DATES & STADIUM NAMES: MENU 2
+# TRIVIA MINIGAME: MENU 3
 
 
-# Main Menu: User selects one of the following options.
-def main_menu():
+# MAIN MENU: User selects one of the following options.
+def main():
     while True:
         try:
             main_choice = int(
@@ -110,7 +122,7 @@ def main_menu():
             continue
 
         if main_choice == 1:
-            soccer_league()
+            soccer_teams()
         elif main_choice == 2:
             print("\n--- Matches Menu ---")
         elif main_choice == 3:
@@ -122,4 +134,5 @@ def main_menu():
             continue
 
 
-main_menu()
+if __name__ == "__main__":
+    main()
