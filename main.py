@@ -4,7 +4,7 @@ The purpose of this project is to create a tool that allows soccer enthusiasts t
 have all the information from soccer teams, to soccer leagues from Honduras.
 """
 
-from module import ascenso_league, finder_first_division, first_division
+from module import ascenso_league, first_division
 
 ############################################################################################
 # Create a function that shows the Soccer Manager Menu
@@ -96,7 +96,18 @@ def honduran_leagues():
 
 
 # Subfunction 2 (Belongs to Menu 1): Finder
-
+def finder():
+    print("\n--- Finder ---")
+    print("Search for a team to get its Wikipedia link.")
+    print("(Type 'exit' to go back)\n")
+    while True:
+        query = input("Write the team name -> ").strip()
+        if query.lower() == "exit":
+            break
+        if not query:
+            continue
+        
+                
 
 # MATCHES WITH DATES & STADIUM NAMES: MENU 2
 # TRIVIA MINIGAME: MENU 3
