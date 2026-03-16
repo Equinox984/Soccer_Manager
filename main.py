@@ -247,7 +247,7 @@ def trivia_minigame():
         try:
             choice = int(
                 input("""
-=== Please Select an Option ===
+=== Trivia Mingame Menu ===
 
 [1] Start Trivia Minigame
 [2] Last Highest Score
